@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 5,
+      "name": "mohana",
+      "course": "cse",
+      "year": 4
+    },
+    {
+      "id": 1,
+      "name": "Mobile",
+      "price": 20000,
+      "stock": 12
+    },
+    {
+      "id": 1,
+      "name": "Mobile",
+      "price": 20000,
+      "stock": 15
+    },
+    {
+      "id": 2,
+      "name": "laptop",
+      "price": 200000,
+      "stock": 15
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "productId": 1,
+      "quantity": 3,
+      "totalAmount": 60000,
+      "status": "placed",
+      "createdAt": "2026-01-18"
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "quantity": 5,
+      "totalAmount": 1000000,
+      "status": "placed",
+      "createdAt": "2026-01-18"
+    }
+  ]
+}
