@@ -1,0 +1,31 @@
+
+{
+  "users": [
+    {
+      "id": 101,
+      "name": "Aarav",
+      "email": "aarav@gmail.com",
+      "age": 22
+    },
+    {
+      "id": 102,
+      "name": "Diya",
+      "email": "diya@gmail.com",
+      "age": 21
+    }
+  ],
+  "todos": [
+    {
+      "id": 201,
+      "title": "Learn Express Routing",
+      "completed": false,
+      "userId": 101
+    },
+    {
+      "id": 202,
+      "title": "Practice CRUD operations",
+      "completed": true,
+      "userId": 102
+    }
+  ]
+}
