@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn JavaScript basics",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Practice Express MVC structure",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Understand REST API concepts",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Revise DBMS important questions",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "title": "Prepare final-year project proposal",
+      "completed": false
+    }
+  ]
+}
