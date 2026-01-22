@@ -1,0 +1,88 @@
+
+create  table student(id serial primary key,name text,email text,age int,course text,created_at timestamp DEFAULT CURRENT_TIMESTAMP);
+insert into student (name, email, age, course)
+values
+('Ravi', 'ravi@gmail.com', 20, 'Computer Science'),
+('Anita', 'anita@gmail.com', 21, 'Information Technology'),
+('Suresh', 'suresh@gmail.com', 22, 'Electronics'),
+('Priya', 'priya@gmail.com', 20, 'Mechanical'),
+('Kiran', 'kiran@gmail.com', 23, 'Civil Engineering');
+select * from student;
+
+| id | name   | email            | age | course                 | created_at                 |
+| -- | ------ | ---------------- | --- | ---------------------- | -------------------------- |
+| 5  | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:42:33.370733 |
+| 10 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:43:14.510882 |
+| 15 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:43:25.510734 |
+| 20 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:44:14.421671 |
+| 1  | Ravi   | ravi@gmail.com   | 30  | AIML                   | 2026-01-22 16:42:33.370733 |
+| 21 | Ravi   | ravi@gmail.com   | 20  | Computer Science       | 2026-01-22 17:07:21.668714 |
+| 22 | Anita  | anita@gmail.com  | 21  | Information Technology | 2026-01-22 17:07:21.668714 |
+| 23 | Suresh | suresh@gmail.com | 22  | Electronics            | 2026-01-22 17:07:21.668714 |
+| 24 | Priya  | priya@gmail.com  | 20  | Mechanical             | 2026-01-22 17:07:21.668714 |
+| 25 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 17:07:21.668714 |
+
+select * from student where age>20;
+
+
+| id | name   | email            | age | course                 | created_at                 |
+| -- | ------ | ---------------- | --- | ---------------------- | -------------------------- |
+| 5  | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:42:33.370733 |
+| 10 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:43:14.510882 |
+| 15 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:43:25.510734 |
+| 20 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:44:14.421671 |
+| 1  | Ravi   | ravi@gmail.com   | 30  | AIML                   | 2026-01-22 16:42:33.370733 |
+| 22 | Anita  | anita@gmail.com  | 21  | Information Technology | 2026-01-22 17:07:21.668714 |
+| 23 | Suresh | suresh@gmail.com | 22  | Electronics            | 2026-01-22 17:07:21.668714 |
+| 25 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 17:07:21.668714 |
+
+select name,email from student;
+
+| name   | email            |
+| ------ | ---------------- |
+| Kiran  | kiran@gmail.com  |
+| Kiran  | kiran@gmail.com  |
+| Kiran  | kiran@gmail.com  |
+| Kiran  | kiran@gmail.com  |
+| Ravi   | ravi@gmail.com   |
+| Ravi   | ravi@gmail.com   |
+| Anita  | anita@gmail.com  |
+| Suresh | suresh@gmail.com |
+| Priya  | priya@gmail.com  |
+| Kiran  | kiran@gmail.com  |
+
+select * from student where course='Computer Science';
+
+| id | name | email          | age | course           | created_at                 |
+| -- | ---- | -------------- | --- | ---------------- | -------------------------- |
+| 21 | Ravi | ravi@gmail.com | 20  | Computer Science | 2026-01-22 17:07:21.668714 |
+
+update student set age=30 where id=1;
+update student set course='AIML' where course='Computer Science';
+select * from student;
+
+| id | name   | email            | age | course                 | created_at                 |
+| -- | ------ | ---------------- | --- | ---------------------- | -------------------------- |
+| 5  | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:42:33.370733 |
+| 10 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:43:14.510882 |
+| 15 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:43:25.510734 |
+| 20 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 16:44:14.421671 |
+| 22 | Anita  | anita@gmail.com  | 21  | Information Technology | 2026-01-22 17:07:21.668714 |
+| 23 | Suresh | suresh@gmail.com | 22  | Electronics            | 2026-01-22 17:07:21.668714 |
+| 24 | Priya  | priya@gmail.com  | 20  | Mechanical             | 2026-01-22 17:07:21.668714 |
+| 25 | Kiran  | kiran@gmail.com  | 23  | Civil Engineering      | 2026-01-22 17:07:21.668714 |
+| 1  | Ravi   | ravi@gmail.com   | 30  | AIML                   | 2026-01-22 16:42:33.370733 |
+| 21 | Ravi   | ravi@gmail.com   | 20  | AIML                   | 2026-01-22 17:07:21.668714 |
+ 
+delete from student WHERE id = 3;
+delete from student WHERE age <23;
+select * from student;
+select * from student;
+
+| id | name  | email           | age | course            | created_at                 |
+| -- | ----- | --------------- | --- | ----------------- | -------------------------- |
+| 5  | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:42:33.370733 |
+| 10 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:43:14.510882 |
+| 15 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:43:25.510734 |
+| 20 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:44:14.421671 |
+| 1  | Ravi  | ravi@gmail.com  | 30  | AIML              | 2026-01-22 16:42:33.370733 |
