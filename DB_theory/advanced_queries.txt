@@ -1,0 +1,93 @@
+--Aggregate Queries----
+1.SELECT COUNT(*) AS total_students FROM student;
+
+| total_students |
+| -------------- |
+| 10             |
+
+2.SELECT AVG(age) AS average_age FROM student;
+
+| average_age         |
+| ------------------- |
+| 22.8000000000000000 |
+
+3.SELECT MIN(age) AS min_age,MAX(age) AS max_age FROM student;
+
+
+| min_age | max_age |
+| ------- | ------- |
+| 20      | 30      |
+
+4.SELECT course,COUNT(*) AS total_students FROM student GROUP BY course;
+
+| course                 | totla_studetns |
+| ---------------------- | -------------- |
+| Civil Engineering      | 5              |
+| Mechanical             | 1              |
+| Electronics            | 1              |
+| Information Technology | 1              |
+| AIML                   | 2              |
+
+5.SELECT COUNT(*) AS above_20 FROM student WHERE age > 20;
+
+| above_20 |
+| -------- |
+| 8        |
+
+----Grouping & Filtering-----
+1.SELECT course, COUNT(*) AS student_count FROM student GROUP BY course;
+
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Civil Engineering      | 5             |
+| Mechanical             | 1             |
+| Electronics            | 1             |
+| Information Technology | 1             |
+| AIML                   | 2             |
+
+2.SELECT course,COUNT(*) AS student_count FROM student GROUP BY course HAVING COUNT(*) > 1;
+
+| course            | student_count |
+| ----------------- | ------------- |
+| Civil Engineering | 5             |
+| AIML              | 2             |
+
+3.SELECT course,COUNT(*) AS student_count FROM student GROUP BY course ORDER BY student_count DESC;
+
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Civil Engineering      | 5             |
+| AIML                   | 2             |
+| Mechanical             | 1             |
+| Electronics            | 1             |
+| Information Technology | 1             |
+
+-----Ordering & Limiting--------
+1.SELECT * FROM student ORDER BY created_at DESC LIMIT 3;
+
+| id | name   | email            | age | course                 | created_at                 |
+| -- | ------ | ---------------- | --- | ---------------------- | -------------------------- |
+| 23 | Suresh | suresh@gmail.com | 22  | Electronics            | 2026-01-22 17:07:21.668714 |
+| 22 | Anita  | anita@gmail.com  | 21  | Information Technology | 2026-01-22 17:07:21.668714 |
+| 24 | Priya  | priya@gmail.com  | 20  | Mechanical             | 2026-01-22 17:07:21.668714 |
+
+2.SELECT *FROM student ORDER BY age DESC LIMIT 5;
+
+| id | name  | email           | age | course            | created_at                 |
+| -- | ----- | --------------- | --- | ----------------- | -------------------------- |
+| 1  | Ravi  | ravi@gmail.com  | 30  | AIML              | 2026-01-22 16:42:33.370733 |
+| 25 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 17:07:21.668714 |
+| 10 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:43:14.510882 |
+| 15 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:43:25.510734 |
+| 20 | Kiran | kiran@gmail.com | 23  | Civil Engineering | 2026-01-22 16:44:14.421671 |
+
+3.SELECT *FROM student WHERE course = 'AIML' ORDER BY age DESC;
+
+| id | name | email          | age | course | created_at                 |
+| -- | ---- | -------------- | --- | ------ | -------------------------- |
+| 1  | Ravi | ravi@gmail.com | 30  | AIML   | 2026-01-22 16:42:33.370733 |
+| 21 | Ravi | ravi@gmail.com | 20  | AIML   | 2026-01-22 17:07:21.668714 |
+
+
